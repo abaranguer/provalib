@@ -1,0 +1,28 @@
+all: principal2 principal clean
+
+file1.o: file1.c
+	gcc -c file1.c
+
+file2.o: file2.c
+	gcc -c file2.c
+
+proves: file1.o file2.o
+	ar rcs libprova.a file1.o file2.o
+
+principal.o: principal.c 
+	gcc -c principal.c
+
+principal: principal.o proves
+	gcc -o principal principal.o -L. -lprova
+
+principal2: principal.o file1.o file2.o
+	gcc -o principal2 principal.o file1.o file2.o
+
+#externa.o: externa.c
+#	gcc -c -shared externa.c
+
+#externa: externa.o
+#	gcc -o externa externa.o
+
+clean: 
+	rm ./*.o  ./*~

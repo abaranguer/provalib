@@ -1,0 +1,10 @@
+all: principal3 clean
+
+principal.o: principal.c
+	gcc -o principal.o -c principal.c
+
+principal3: principal.o
+	gcc -o principal3  principal.o -lprova
+
+clean: 
+	rm ./*.o ./*.so.* ./*.a ./*~
