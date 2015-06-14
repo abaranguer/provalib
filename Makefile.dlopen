@@ -1,0 +1,10 @@
+all: principal4
+
+principal_dl.o: principal_dl.c
+	gcc -o principal_dl.o -c principal_dl.c
+
+principal4: principal_dl.o
+	gcc -o principal4  principal_dl.o -ldl
+
+clean: 
+	rm ./*.o ./*.so.* ./*.a ./*~

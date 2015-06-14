@@ -1,7 +1,0 @@
-from ctypes import *
-
-prova = CDLL("libprova.so.1")
-ret1 = prova.funcio1(7)
-ret2 = prova.funcio2(3)
-
-print "ret1: %d; ret2: %d" % (ret, ret2)

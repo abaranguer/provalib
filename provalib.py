@@ -4,9 +4,9 @@ from ctypes import *
 
 if __name__ == "__main__":
   prova = CDLL("libprova.so.1")
-  print "Sortida de funcio1"
+  print "Sortida de funcio1(7)"
   ret1 = prova.funcio1(7)
-  print "\nSortida de funcio2"
+  print "\nSortida de funcio2(3)"
   ret2 = prova.funcio2(3)
 
-  print "ret1: %d; ret2: %d" % (ret1, ret2)
+  print "\nret1: %d; ret2: %d" % (ret1, ret2)
